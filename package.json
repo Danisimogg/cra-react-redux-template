@@ -1,5 +1,5 @@
 {
-  "name": "@npm/modular-application-skeleton",
+  "name": "@npm/cra-react-redux-template",
   "private": true,
   "version": "1.0.0",
   "description": "Concept of a modular single page application",
@@ -28,17 +28,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexbaumgertner/modular-application-skeleton.git"
+    "url": "git+https://github.com/Danisimogg/cra-react-redux-template.git"
   },
   "keywords": [
     "spa",
     "modular"
   ],
-  "author": "alex.baumgertner@gmail.com",
+  "author": "daniall.husacov@gmail.com",
   "license": "MIT",
-  "homepage": "https://github.com/alexbaumgertner/modular-application-skeleton#readme",
+  "homepage": "https://github.com/Danisimogg/cra-react-redux-template#readme",
   "bugs": {
-    "url": "https://github.com/alexbaumgertner/modular-application-skeleton/issues"
+    "url": "https://github.com/Danisimogg/cra-react-redux-template/issues"
   },
   "engines": {
     "node": ">=10.0.0"
