@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { Table } from 'semantic-ui-react'
+import {Table} from 'semantic-ui-react'
 
 import CatalogListRow from '../CatalogListRow'
 
@@ -41,12 +41,12 @@ class CatalogList extends Component {
           </Table.Body>
           <Table.Footer>
             <Table.Row>
-              <Table.Cell>ИТОГО</Table.Cell>
+              <Table.Cell>Total</Table.Cell>
               <Table.Cell>{totalPrice}</Table.Cell>
-              <Table.Cell></Table.Cell>
-              <Table.Cell></Table.Cell>
-              <Table.Cell></Table.Cell>
-              <Table.Cell></Table.Cell>
+              <Table.Cell/>
+              <Table.Cell/>
+              <Table.Cell/>
+              <Table.Cell/>
             </Table.Row>
           </Table.Footer>
         </Table>
