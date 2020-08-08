@@ -1,7 +1,8 @@
 // This script removes demo app files
-import rimraf from 'rimraf';
-import fs from 'fs';
-import { chalkSuccess } from './chalkConfig';
+let rimraf = require('rimraf');
+let fs = require('fs');
+let {chalkSuccess} = require('./chalkConfig');
+
 
 /* eslint-disable no-console */
 
