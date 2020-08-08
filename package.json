@@ -7,12 +7,6 @@
   "scripts": {
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
     "remove-demo": "babel-node tools/removeDemo.js",
-    "start-message": "babel-node tools/startMessage.js",
-    "prestart": "npm run start-message",
-    "open:src": "babel-node tools/srcServer.js",
-    "open:dist": "babel-node tools/distServer.js",
-    "lint": "esw webpack.config.* src tools --color",
-    "lint:watch": "npm run lint -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rimraf ./dist",
     "start": "react-scripts start",
