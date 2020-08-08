@@ -6,7 +6,7 @@
   "main": "src/index.jsx",
   "scripts": {
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
+    "remove-demo": "babel-node tools/removeDemo/removeDemo.js",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rimraf ./dist",
     "start": "react-scripts start",
