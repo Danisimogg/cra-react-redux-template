@@ -3,7 +3,7 @@ import CatalogItem from "./index";
 
 // This default export determines where you story goes in the story list
 export default {
-  title: 'Catalog/CatalogItem',
+  title: 'Catalog/Catalog',
   component: CatalogItem,
 };
 
