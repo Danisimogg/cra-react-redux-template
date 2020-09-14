@@ -13,7 +13,7 @@ let chalkProcessing = chalk.blue;
 /* eslint-disable no-console */
 
 const pathsToRemove = [
-  './src/app/Components',
+  './src/app',
   './src/app/Containers/*',
   './tools/removeDemo.js',
 
@@ -55,33 +55,45 @@ console.log(chalkSuccess('Dependencies installed.'));
 
 prompt.start();
 
-console.log(chalkProcessing("WARNING: "));
+console.log(chalkProcessing("WARNING: You could lose your data"));
 prompt.get([{
-  name: 'deleteGit',
-  description: "  [Y/n]"
-}], function (err, result) {
-  let deleteGit = result.deleteGit.toUpperCase();
-
+  name: 'redux',
+  description: "Redux ? [Y/n]"
+}, {
+  name: 'storybook',
+  description: "Storybook ? [Y/n]"
+}, {
+  name: 'unitTests',
+  description: "Unit-test ? [Y/n]"
+}, {
+  name: 'e2e',
+  description: "E2E-test ? [Y/n]"
+}, {
+  name: 'removeDemo',
+  description: "Would you like to remove demo ? [Y/n]"
+}
+], function (err, result) {
+  let redux = result.redux.toUpperCase();
+  let removeDemo = result.removeDemo.toUpperCase();
+  console.log(redux)
   if (err) {
     process.exit(1);
   }
-  if (deleteGit.match(/^N.*/)) {
-    updatePackage();
-  }
-  let numPathsRemoved = 0;
-  pathsToRemove.map(path => {
-    removePath(path, () => {
-      numPathsRemoved++;
-      if (numPathsRemoved === pathsToRemove.length) {
-        // All paths have been processed
-        // Now we can create files since we're done deleting.
-
-        filesToCreate.map(file => createFile(file));
-      }
+  if (removeDemo.match(/^N.*/)) {
+    console.log(removeDemo);
+    console.log(removeDemo.match(/^N.*/))
+  } else {
+    let numPathsRemoved = 0;
+    pathsToRemove.map(path => {
+      removePath(path, () => {
+        numPathsRemoved++;
+        if (numPathsRemoved === pathsToRemove.length) {
+          filesToCreate.map(file => createFile(file));
+        }
+      });
     });
-  });
-
+    console.log(chalkSuccess('Demo app removed.'));
+  }
   removePackageJsonScriptEntry('remove-demo');
-
-  console.log(chalkSuccess('Demo app removed.'));
+  console.log(chalkSuccess('Setup completed. Happy Hacking'));
 });
