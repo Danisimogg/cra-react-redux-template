@@ -1,13 +1,13 @@
 /* eslint-disable no-var */
-var rimraf = require('rimraf');
-var chalk = require('chalk');
-var replace = require("replace");
-var prompt = require("prompt");
-var prompts = require('./setupPrompts');
+let rimraf = require('rimraf');
+let chalk = require('chalk');
+let replace = require("replace");
+let prompt = require("prompt");
+let prompts = require('./setupPrompts');
 
-var chalkSuccess = chalk.green;
-var chalkProcessing = chalk.blue;
-var chalkWarn = chalk.red;
+let chalkSuccess = chalk.green;
+let chalkProcessing = chalk.blue;
+let chalkWarn = chalk.red;
 
 /* eslint-disable no-console */
 
@@ -16,8 +16,11 @@ console.log(chalkSuccess('Dependencies installed.'));
 prompt.start();
 
 console.log(chalkWarn("WARNING:  Preparing to delete local git repository..."));
-prompt.get([{name: 'deleteGit', description: "Delete the git repository?  [Y/n]"}], function(err, result) {
-  var deleteGit = result.deleteGit.toUpperCase();
+prompt.get([{
+  name: 'deleteGit',
+  description: "Delete the git repository?  [Y/n]"
+}], function (err, result) {
+  let deleteGit = result.deleteGit.toUpperCase();
 
   if (err) {
     process.exit(1);
@@ -70,7 +73,7 @@ prompt.get([{name: 'deleteGit', description: "Delete the git repository?  [Y/n]"
 
       // reset package.json 'keywords' field to empty state
       replace({
-        regex: /"keywords": \[[\s\S]+?\]/,
+        regex: /"keywords": \[[\s\S]+?]/,
         replacement: `"keywords": []`,
         paths: ['package.json'],
         recursive: false,

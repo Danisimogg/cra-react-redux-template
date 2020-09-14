@@ -1,4 +1,4 @@
-import { createStore } from 'redux/index'
+import {createStore} from 'redux'
 import rootReducer from '../Containers/rootReducer'
 
 const configureStore = preloadedState => {
