@@ -4,7 +4,7 @@ let fs = require('fs');
 let chalk = require('chalk');
 // let replace = require("replace");
 let prompt = require("prompt");
-// let prompts = require('./setupPrompts');
+let prompts = require('./removeDemoPrompts');
 
 let chalkSuccess = chalk.green;
 let chalkProcessing = chalk.blue;
@@ -13,36 +13,20 @@ let chalkProcessing = chalk.blue;
 /* eslint-disable no-console */
 
 const pathsToRemove = [
-  './src/actions/*',
-  './src/utils',
-  './src/components/*',
-  './src/constants/*',
-  './src/containers/*',
-  './src/images',
-  './src/reducers/*',
-  './src/store/store.spec.js',
-  './src/styles/*',
-  './src/index.js',
-  './src/types/*',
+  './src/app/Components',
+  './src/app/Containers/*',
   './tools/removeDemo.js',
-  './src/**/__snapshots__'
+
 ];
 
 const filesToCreate = [
   {
-    path: './src/components/emptyTest.spec.js',
-    content:
-      '// Must have at least one test file in this directory or Mocha will throw an error.'
-  },
-  {
     path: './src/index.js',
     content: '// Set up your application entry point here...'
+  },  {
+    path: './src/test',
   },
-  {
-    path: './src/reducers/index.js',
-    content:
-      "// Set up your root reducer here...\n import { combineReducers } from 'redux';\n export default combineReducers;"
-  }
+
 ];
 
 function removePath(path, callback) {
@@ -58,6 +42,7 @@ function createFile(file) {
   });
 }
 
+
 function removePackageJsonScriptEntry(scriptName) {
   const packageJsonPath = './package.json';
   let fileData = fs.readFileSync(packageJsonPath);
@@ -70,10 +55,10 @@ console.log(chalkSuccess('Dependencies installed.'));
 
 prompt.start();
 
-console.log(chalkProcessing("WARNING:  Preparing to delete local git repository..."));
+console.log(chalkProcessing("WARNING: "));
 prompt.get([{
   name: 'deleteGit',
-  description: "Delete the git repository?  [Y/n]"
+  description: "  [Y/n]"
 }], function (err, result) {
   let deleteGit = result.deleteGit.toUpperCase();
 
@@ -90,6 +75,7 @@ prompt.get([{
       if (numPathsRemoved === pathsToRemove.length) {
         // All paths have been processed
         // Now we can create files since we're done deleting.
+
         filesToCreate.map(file => createFile(file));
       }
     });
