@@ -1,7 +1,7 @@
 {
   "package": {
     "scripts": {
-      "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
+      "setup": "node tools/setup/setupMessage.js && npm ci && node tools/setup/setup.js",
       "remove-demo": "node tools/removeDemo/removeDemo.js",
       "clean-dist": "npm run remove-dist && mkdir dist",
       "remove-dist": "rimraf ./dist",
