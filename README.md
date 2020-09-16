@@ -1,5 +1,5 @@
 #  cra-template-danisimo 
-![Alt Text](https://i.imgur.com/KOcazZy.gif)
+![Node.js Package](https://github.com/Danisimogg/cra-react-redux-template/workflows/Node.js%20Package/badge.svg)
 
 ## Usage
 
