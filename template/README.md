@@ -1,5 +1,4 @@
 #  cra-template-danisimo 
-![Alt Text](https://i.imgur.com/KOcazZy.gif)
 
 ## Usage
 
